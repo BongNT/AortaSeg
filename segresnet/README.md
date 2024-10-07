@@ -1,8 +1,13 @@
+# Training
+## Move to "segresnet/run" folder, install environment using requirement.txt
+```
+pip install -r requirements.txt
+```
+## Generate skeleton using script in dataset/gen_skeleton_from_mask.py
+change variables "skeleton_folder_ouput" and "base" to be suitable with your environment, dataset folder.
 
-1. install environment using requirement.txt
-2. generate skeleton using script in dataset/gen_skeleton_from_mask.py
-3. move to run folder, prepare data.json and task.yaml
-data.json follow this structure:
+## Prepare data.json 
+[data1.json](run/work_dir/data.json) and [data2.json](run/work_dir/data.json) must be same and follow this structure:
 ```
 {
     "testing": [
@@ -21,7 +26,10 @@ data.json follow this structure:
     ]
 }
 ```
+## Change 2 config in [config file](run/work_dir/segresnet_0/configs/hyper_parameters.yaml)
+data_file_base_dir = your current segresnet/run folder. E.g.: data_file_base_dir: /home/user/AortaSeg24/models/package/segresnet/run
 
+skel_folder = folder that contain skeleton masks. E.g: skel_folder: "/home/user/AortaSeg24/datasets/skeletons"
+## Run training with "python run.py" command
 
-4. run training with "python run.py" command
 

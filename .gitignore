@@ -1,3 +1,6 @@
 __pycache__
-runner.log
-training.log
+*.log
+.pkl
+events*
+*history.csv
+*.pt

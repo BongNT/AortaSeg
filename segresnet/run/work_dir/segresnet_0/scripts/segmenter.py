@@ -1101,7 +1101,8 @@ class Segmenter:
         _, validation_files = datafold_read(datalist=data_list_file_path, basedir=config["data_file_base_dir"], fold=config["fold"], key="testing")
         
         # add skeleton 
-        train_files = add_skeleton_file(train_files, "/home/user/AortaSeg24/datasets/skeletons")
+        logger.info(f'skeleton folder : {config["skel_folder"]}')
+        train_files = add_skeleton_file(train_files, config["skel_folder"])
         
         logger.info(f"train_files | val_files: {len(train_files)} | {len(validation_files)}")
         logger.debug(f"train_files: {train_files}")
