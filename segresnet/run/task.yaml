@@ -1,0 +1,6 @@
+modality: CT
+datalist: "/home/user/AortaSeg24/models/auto3dseg/run/data.json"
+dataroot: ""
+set_device_info: 2
+cuda_visible_devices: 2
+num_workers: 0

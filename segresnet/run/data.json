@@ -1,0 +1,256 @@
+{
+    "testing": [
+    ],
+    "training": [
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject044_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject044_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject045_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject045_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject046_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject046_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject047_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject047_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject048_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject048_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject049_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject049_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject050_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject050_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject051_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject051_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject052_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject052_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject053_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject053_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject001_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject001_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject002_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject002_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject003_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject003_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject004_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject004_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject005_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject005_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject006_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject006_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject007_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject007_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject008_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject008_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject009_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject009_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject010_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject010_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject011_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject011_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject012_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject012_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject013_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject013_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject015_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject015_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject016_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject016_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject017_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject017_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject018_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject018_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject019_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject019_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject020_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject020_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject021_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject021_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject022_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject022_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject023_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject023_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject024_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject024_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject025_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject025_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject026_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject026_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject027_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject027_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject028_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject028_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject029_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject029_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject030_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject030_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject031_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject031_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject032_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject032_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject033_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject033_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject034_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject034_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject035_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject035_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject036_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject036_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject038_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject038_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject039_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject039_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject040_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject040_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject041_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject041_label.mha",
+            "fold": 0
+        },
+        {
+            "image": "/home/user/AortaSeg24/datasets/images/subject042_CTA.mha",
+            "label": "/home/user/AortaSeg24/datasets/masks/subject042_label.mha",
+            "fold": 0
+        }
+    ]
+}
