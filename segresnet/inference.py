@@ -46,8 +46,15 @@ print('All required modules are loaded!!!')
 INPUT_PATH = Path("/input")
 OUTPUT_PATH = Path("/output")
 RESOURCE_PATH = Path("resources")
-
-
+ROI = [160, 160, 256]
+SPATIAL_DIMS=3, 
+iNIT_FILTERS=32,
+IN_CHANNELS=1,
+OUT_CHANNELS=24,
+BLOCK_DOWNS=[1, 2, 4, 5, 6],
+NORM="INSTANCE",
+ACT="leakyrelu",
+DSDEPTH=4
 def run():
     # Read the input
     # Read the input
@@ -93,14 +100,14 @@ def run():
     image = transform(image)
     image = image.permute(2, 1, 0).unsqueeze(0).unsqueeze(0)
     print(f"image shape {image.shape}")
-    model = SegResNetDS(spatial_dims=3, 
-                    init_filters=32,
-                    in_channels=1,
-                    out_channels=24,
-                    blocks_down=[1, 2, 4, 5, 6],
-                    norm="INSTANCE",
-                    act="leakyrelu",
-                    dsdepth=4)
+    model = SegResNetDS(spatial_dims=SPATIAL_DIMS, 
+                    init_filters=iNIT_FILTERS,
+                    in_channels=IN_CHANNELS,
+                    out_channels=OUT_CHANNELS,
+                    blocks_down=BLOCK_DOWNS,
+                    norm=NORM,
+                    act=ACT,
+                    dsdepth=DSDEPTH)
     state_dict = torch.load(str(RESOURCE_PATH/"model_final.pt"), map_location='cpu')["state_dict"]
     model.load_state_dict(state_dict=state_dict)
     del state_dict  # Free memory used by the state dictionary
@@ -112,7 +119,7 @@ def run():
     model.eval()
     
     sliding_inferrer = SlidingWindowInfererAdapt(
-                roi_size=[160, 160, 256],
+                roi_size=ROI,
                 sw_batch_size=1,
                 overlap=0.625,
                 mode="gaussian",
