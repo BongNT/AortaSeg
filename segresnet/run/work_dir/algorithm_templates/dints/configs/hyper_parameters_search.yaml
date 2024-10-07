@@ -1,0 +1,61 @@
+---
+searching:
+  # hyper-parameters
+  amp: true
+  arch_path: "$@bundle_root + '/arch_ram' + str(@searching#ram_cost_factor) + '_fold' + str(@fold)"
+  determ: false
+  input_channels: null
+  sw_input_on_cpu: false
+  learning_rate: 0.025
+  learning_rate_arch: 0.001
+  log_output_file: "$@bundle_root + '/arch_ram' + str(@searching#ram_cost_factor) + '_fold' + str(@fold) + '/searching.log'"
+  num_images_per_batch: 2
+  num_epochs: 1000
+  num_epochs_per_validation: 20
+  num_warmup_epochs: 500
+  num_crops_per_image: 1
+  num_sw_batch_size: 2
+  num_workers: 6
+  num_cache_workers: 8
+  output_classes: null
+  overlap_ratio: 0.625
+  roi_size: null
+  roi_size_valid: null
+  ram_cost_factor: 0.8
+  resample_resolution: null
+  softmax: true
+  cache_rate: 1
+  train_cache_rate: "@searching#cache_rate"
+  validate_cache_rate: "@searching#cache_rate"
+  transforms:
+    resample_resolution: "@searching#resample_resolution"
+  # architecture searching
+  loss:
+    _target_: DiceFocalLoss
+    include_background: true
+    to_onehot_y: "@searching#softmax"
+    softmax: "@searching#softmax"
+    sigmoid: "$not @searching#softmax"
+    squared_pred: true
+    batch: true
+    smooth_nr: 1.0e-05
+    smooth_dr: 1.0e-05
+  optimizer:
+    _target_: torch.optim.SGD
+    lr: "@searching#learning_rate"
+    momentum: 0.9
+    weight_decay: 4.0e-05
+  arch_optimizer_a:
+    _target_: torch.optim.Adam
+    lr: "@searching#learning_rate_arch"
+    betas: [0.5, 0.999]
+    weight_decay: 0
+  arch_optimizer_c:
+    _target_: torch.optim.Adam
+    lr: "@searching#learning_rate_arch"
+    betas: [0.5, 0.999]
+    weight_decay: 0
+  lr_scheduler:
+    _target_: torch.optim.lr_scheduler.StepLR
+    step_size: "$max(int(float(@searching#num_epochs - @searching#num_warmup_epochs) * 0.4), 1)"
+    gamma: 0.5

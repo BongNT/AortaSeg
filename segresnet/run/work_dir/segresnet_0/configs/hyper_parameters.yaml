@@ -1,8 +1,10 @@
 _meta_: {}
-bundle_root: /home/user/AortaSeg24/models/auto3dseg/run/work_dir/segresnet_0
+bundle_root: /mnt/d/temp/AortaSeg/segresnet/run/work_dir/segresnet_0
 ckpt_path: $@bundle_root + '/model'
-data_file_base_dir: /home/user/AortaSeg24/models/auto3dseg/run
-data_list_file_path: /home/user/AortaSeg24/models/auto3dseg/run/work_dir/data.json
+mlflow_tracking_uri: $@ckpt_path + '/mlruns/'
+mlflow_experiment_name: Auto3DSeg
+data_file_base_dir: /mnt/d/temp/AortaSeg/segresnet/run
+data_list_file_path: /mnt/d/temp/AortaSeg/segresnet/run/work_dir/data.json
 modality: ct
 fold: 0
 input_channels: 1
@@ -11,10 +13,10 @@ class_names: null
 class_index: null
 debug: false
 ckpt_save: true
-cache_rate: 1
-roi_size: [160, 160, 256] #[160, 160, 256]
-auto_scale_allowed: false
-auto_scale_batch: false
+cache_rate: null
+roi_size: [160, 160, 160]
+auto_scale_allowed: true
+auto_scale_batch: true
 auto_scale_roi: false
 auto_scale_filters: false
 quick: false
@@ -24,37 +26,39 @@ calc_val_loss: false
 amp: true
 log_output_file: null
 cache_class_indices: null
-early_stopping_fraction: 0
+early_stopping_fraction: 0.001
 determ: false
-learning_rate: 0.00015
+orientation_ras: true
+crop_foreground: true
+learning_rate: 0.0002
 batch_size: 1
 num_images_per_batch: 1
-num_epochs: 2000
-num_warmup_epochs: 20
+num_epochs: 1250
+num_warmup_epochs: 3
 sigmoid: false
 resample: false
 resample_resolution: [1.0, 1.0, 1.0]
 crop_mode: ratio
-normalize_mode: zscore
-intensity_bounds: [-25.025, 470.259375]
-num_epochs_per_validation: 3000
+normalize_mode: range
+intensity_bounds: [-14.025, 395.259375]
+num_epochs_per_validation: null
 num_epochs_per_saving: 1
-num_workers: 8
+num_workers: 0
 num_steps_per_image: null
 num_crops_per_image: 1
-loss: {_target_: DiceCELoss, include_background: true, smooth_nr: 0, smooth_dr: 1.0e-05,
-  squared_pred: true, softmax: $not @sigmoid, sigmoid: $@sigmoid, to_onehot_y: $not
+loss: {_target_: DiceCELoss, include_background: true, squared_pred: true, smooth_nr: 0,
+  smooth_dr: 1.0e-05, softmax: $not @sigmoid, sigmoid: $@sigmoid, to_onehot_y: $not
     @sigmoid}
 optimizer: {_target_: torch.optim.AdamW, lr: '@learning_rate', weight_decay: 1.0e-05}
 network:
   _target_: SegResNetDS
   init_filters: 32
-  blocks_down: [1, 2, 4, 5, 6]
+  blocks_down: [1, 2, 2, 4, 4]
   norm: INSTANCE_NVFUSER
   in_channels: '@input_channels'
   out_channels: '@output_classes'
   dsdepth: 4
-finetune: {enabled: false, ckpt_name: $@bundle_root + '/model/model_final_copy.pt'}
+finetune: {enabled: false, ckpt_name: $@bundle_root + '/model/model.pt'}
 validate: {enabled: false, ckpt_name: $@bundle_root + '/model/model.pt', output_path: $@bundle_root
     + '/prediction_validation', save_mask: false, invert: true}
 infer: {enabled: false, ckpt_name: $@bundle_root + '/model/model.pt', output_path: $@bundle_root
@@ -66,4 +70,5 @@ spacing_upper: [1.0, 1.0, 1.0]
 image_size_mm_median: [443.0, 443.0, 698.0]
 image_size_mm_90: [498, 498, 750]
 image_size: [498, 498, 750]
-mgpu: {world_size: 2, rank: 0, global_rank: 0}
+set_device_info: 2
+cuda_visible_devices: 2

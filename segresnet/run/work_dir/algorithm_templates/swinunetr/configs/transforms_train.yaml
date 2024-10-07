@@ -1,0 +1,69 @@
+image_key: image
+label_key: label
+transforms_train:
+  _target_: Compose
+  transforms:
+  - _target_: LoadImaged
+    keys: ["@image_key", "@label_key"]
+    image_only: true
+  - _target_: EnsureChannelFirstd
+    keys: ["@image_key", "@label_key"]
+  - PLACEHOLDER_INTENSITY_NORMALIZATION
+  - _target_: Orientationd
+    keys: ["@image_key", "@label_key"]
+    axcodes: RAS
+  - _target_: Spacingd
+    keys: ["@image_key", "@label_key"]
+    pixdim: "$@transforms#resample_resolution"
+    mode: [bilinear, nearest]
+    align_corners: [true, true]
+  - _target_: CastToTyped
+    keys: ["@image_key", "@label_key"]
+    dtype: ["$torch.float32", "$torch.uint8"]
+  - _target_: EnsureTyped
+    keys: ["@image_key", "@label_key"]
+    track_meta: true
+  - _target_: SpatialPadd
+    keys: ["@image_key", "@label_key"]
+    spatial_size: "@roi_size"
+    mode: [constant, constant]
+
+  - _target_: IdentityD  # make the label uptodate (the next transform requires label_key input)
+    keys: ["@label_key"]
+
+  # data augmentation
+  - _target_: RandCropByLabelClassesd
+    keys: ["@image_key", "@label_key"]
+    label_key: "@label_key"
+    num_classes: "@output_classes"
+    spatial_size: "@roi_size"
+    num_samples: "@num_crops_per_image"
+    warn: false
+
+  - _target_: IdentityD   # make image up-to-date, before this line the cropping hasn't been applied
+    keys: ["@image_key"]
+
+  - _target_: RandFlipd
+    keys: ['@image_key', '@label_key']
+    prob: 0.2
+    spatial_axis: 0
+  - _target_: RandFlipd
+    keys: ['@image_key', '@label_key']
+    prob: 0.2
+    spatial_axis: 1
+  - _target_: RandFlipd
+    keys: ['@image_key', '@label_key']
+    prob: 0.2
+    spatial_axis: 2
+  - _target_: RandRotate90d
+    keys: ['@image_key', '@label_key']
+    prob: 0.2
+    max_k: 3
+  - _target_: RandScaleIntensityd
+    keys: ['@image_key']
+    prob: 0.1
+    factors: 0.1
+  - _target_: RandShiftIntensityd
+    keys: ['@image_key']
+    prob: 0.1
+    offsets: 0.1
