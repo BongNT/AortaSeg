@@ -11,10 +11,10 @@ import numpy as np
 from tqdm import tqdm
 # import pandas as pd
 # import matplotlib.pyplot as plt
-base = Path("/home/user/AortaSeg24/datasets/masks")
+mask_folder = Path("/home/user/AortaSeg24/datasets/masks") 
 skeleton_folder_ouput = "/home/user/AortaSeg24/datasets/skeletons"
 
-files = [x for x in base.glob('*.mha') if x.is_file()]
+files = [x for x in mask_folder.glob('*.mha') if x.is_file()]
 def gen_skl_save(path):
     ske_file = str(Path(path.replace("label", "skeleton")).name)
     output_path = str(Path(skeleton_folder_ouput)/ske_file)

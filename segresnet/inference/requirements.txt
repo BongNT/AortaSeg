@@ -1,0 +1,8 @@
+monai==1.3.0
+tqdm
+numpy==1.26.4
+itk
+nibabel
+einops==0.8.0
+tqdm
+SimpleITK

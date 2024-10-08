@@ -27,7 +27,7 @@ def run():
     )
     predictor.initialize_from_trained_model_folder(
         "./resources",
-        use_folds=(0,),
+        use_folds=("all"),
         checkpoint_name='checkpoint_best.pth',
     )
     

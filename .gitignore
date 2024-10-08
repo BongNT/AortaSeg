@@ -4,3 +4,4 @@ __pycache__
 events*
 *history.csv
 *.pt
+*.tar.gz

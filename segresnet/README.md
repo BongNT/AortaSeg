@@ -30,6 +30,20 @@ change variables "skeleton_folder_ouput" and "base" to be suitable with your env
 data_file_base_dir = your current segresnet/run folder. E.g.: data_file_base_dir: /home/user/AortaSeg24/models/package/segresnet/run
 
 skel_folder = folder that contain skeleton masks. E.g: skel_folder: "/home/user/AortaSeg24/datasets/skeletons"
-## Run training with "python run.py" command
+## Run training 
+
+To train segresnet, run "python run.py" command.
+
+Our implement model stored in folder run/work_dir/segresnet_0,  whereas:
+1. configs/hyperarameters.yaml contains training configurations
+2. model folder contains training log, result, pretrained model
+3. scripts folder contain files for training. here is description about some main files in this folder:
+    - data.py: a function to add skeleton mask to dataset list before swap in Dataloader\\
+    - ds_loss.py: reimplement a deepvision loss with skeleton
+    - loss.py: implement used loss function, include SkeRecallDiceCELoss
+    - segmenter.py: implement data preprocess, train, valid epochs,...
+
+
+
 
 

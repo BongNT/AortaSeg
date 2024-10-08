@@ -1,0 +1,33 @@
+{
+    "channel_names": {
+        "0": "CTA"
+    },
+    "labels": {
+        "background": 0,
+        "Zone 0": 1,
+        "Innominate": 2,
+        "Zone 1": 3,
+        "Left Common Carotid": 4,
+        "Zone 2": 5,
+        "Left Subclavian Artery": 6,
+        "Zone 3": 7,
+        "Zone 4": 8,
+        "Zone 5": 9,
+        "Zone 6": 10,
+        "Celiac Artery": 11,
+        "Zone 7": 12,
+        "SMA": 13,
+        "Zone 8": 14,
+        "Right Renal Artery": 15,
+        "Left Renal Artery": 16,
+        "Zone 9": 17,
+        "Zone 10 R (Right Common Iliac Artery)": 18,
+        "Zone 10 L (Left Common Iliac Artery)": 19,
+        "Right Internal Iliac Artery": 20,
+        "Left Internal Iliac Artery": 21,
+        "Zone 11 R (Right External Iliac Artery)": 22,
+        "Zone 11 L (Left External Iliac Artery)": 23
+    },
+    "numTraining": 50,
+    "file_ending": ".mha"
+}
