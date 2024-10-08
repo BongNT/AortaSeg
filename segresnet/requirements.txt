@@ -10,3 +10,4 @@ pyyaml
 fire
 psutil
 tensorboard
+scikit-image

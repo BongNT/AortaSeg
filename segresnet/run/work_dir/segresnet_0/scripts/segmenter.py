@@ -1085,18 +1085,6 @@ class Segmenter:
         if not os.path.isabs(data_list_file_path):
             data_list_file_path = os.path.abspath(os.path.join(config["bundle_root"], data_list_file_path))
 
-        # if config.get("validation_key", None) is not None:
-        #     train_files, _ = datafold_read(datalist=data_list_file_path, basedir=config["data_file_base_dir"], fold=-1)
-        #     validation_files, _ = datafold_read(
-        #         datalist=data_list_file_path,
-        #         basedir=config["data_file_base_dir"],
-        #         fold=-1,
-        #         key=config["validation_key"],
-        #     )
-        # else:
-        #     train_files, validation_files = datafold_read(
-        #         datalist=data_list_file_path, basedir=config["data_file_base_dir"], fold=config["fold"]
-        #     )
         _, train_files = datafold_read(datalist=data_list_file_path, basedir=config["data_file_base_dir"], fold=config["fold"], key="training")
         _, validation_files = datafold_read(datalist=data_list_file_path, basedir=config["data_file_base_dir"], fold=config["fold"], key="testing")
         
